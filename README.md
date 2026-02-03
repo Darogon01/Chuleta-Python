@@ -1,4 +1,4 @@
----
+
 
 # 🐍 Python Professional Cheat Sheet (Senior Edition)
 
@@ -13,7 +13,7 @@ Guía de referencia rápida con navegación interna.
 * [5. Clases y POO](#clases-y-poo)
 * [6. Equivalencias Functional JS (Map/Filter)](#equivalencias-functional-js-mapfilter)
 
----
+
 
 ## 1. Variables y Constantes
 
