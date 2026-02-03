@@ -6,12 +6,12 @@ Guía de referencia rápida con navegación interna.
 
 ## 📑 Tabla de Contenidos
 
-* [1. Variables y Constantes](https://www.google.com/search?q=%231-variables-y-constantes)
-* [2. Datos Primitivos](https://www.google.com/search?q=%232-datos-primitivos)
-* [3. Estructuras de Control (Ifs y Bucles)](https://www.google.com/search?q=%233-estructuras-de-control-ifs-y-bucles)
-* [4. Funciones (Estructura Completa)](https://www.google.com/search?q=%234-funciones-estructura-completa)
-* [5. Clases y POO](https://www.google.com/search?q=%235-clases-y-poo)
-* [6. Equivalencias Functional JS (Map/Filter)](https://www.google.com/search?q=%236-equivalencias-functional-js-mapfilter)
+* [1. Variables y Constantes](#Variables-y-Constantes)
+* [2. Datos Primitivos](#Datos-Primitivos)
+* [3. Estructuras de Control (Ifs y Bucles)](#Estructuras-de-Control)
+* [4. Funciones (Estructura Completa)](·funciones-estructura-completa)
+* [5. Clases y POO](#clases-y-poo)
+* [6. Equivalencias Functional JS (Map/Filter)](#equivalencias-functional-js-mapfilter)
 
 ---
 
