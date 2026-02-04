@@ -18,7 +18,7 @@
 
 ---
 
-## 01. Core Python
+## 1. Core Python
 
 La base del lenguaje. Aquí aprendes las reglas del juego.
 
@@ -90,7 +90,7 @@ resultado = sumar(5, 10)
 
 ---
 
-## 02. Built-in Data Structures
+## 2. Built-in Data Structures
 
 Cómo manejar colecciones de datos.
 
@@ -138,7 +138,7 @@ finally:
 
 ---
 
-## 03. Modular Code & I/O
+## 3. Modular Code & I/O
 
 Organiza tu código para que sea escalable.
 
@@ -179,7 +179,7 @@ with open("notas.txt", "r") as f:
 
 ---
 
-## 04. OOP (Object-Oriented Programming)
+## 4. OOP (Object-Oriented Programming)
 
 Programación orientada a objetos: modelar el mundo real.
 
@@ -219,7 +219,7 @@ def __str__(self): # Lo que sale al hacer print(objeto)
 
 ---
 
-## 05. Intermediate Python
+## 5. Intermediate Python
 
 Herramientas avanzadas para optimizar.
 
@@ -250,7 +250,7 @@ def mi_tarea(): print("Tarea hecha")
 
 ---
 
-## 06. Environments & Automation
+## 6. Environments & Automation
 
 El entorno de trabajo.
 
@@ -289,7 +289,7 @@ print(df.describe()) # Resumen estadístico
 
 ---
 
-## 08. Production Level
+## 8. Production Level
 
 Código listo para la vida real.
 
@@ -309,10 +309,4 @@ logging.warning("Algo no va bien...")
 ```
 
 
-* **Clean Code**: Código legible, modular y con nombres de variables que un humano entienda.
 
----
-
-> **Senior Tip**: No intentes aprenderte cada línea hoy. Elige un bloque (por ejemplo, el 02) y juégalo hasta que te sientas cómodo. El código se aprende rompiéndolo.
-
-¿Te gustaría que cree un **mini-proyecto** que combine los puntos 01 al 04 para que practiques la base de golpe?
