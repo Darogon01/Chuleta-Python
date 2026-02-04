@@ -282,16 +282,56 @@ print(pi) # 3.141592653589793
 
 ## Python File Handling
 
-### Leer y escribir
+### Leer Archivos
 
 ```python
-# Escribir (w = write)
-with open("test.txt", "w") as f:
-    f.write("Hola Python")
+# Línea por línea
+with open("myfile.txt") as file:
+    for line in file:
+        print(line)
 
-# Leer (r = read)
-with open("test.txt", "r") as f:
-    print(f.read())
+# Con número de línea
+file = open('myfile.txt', 'r')
+for i, line in enumerate(file, start=1):
+    print("Number %s: %s" % (i, line))
+
+```
+### Escribir y Manejar Objetos (JSON)
+
+```python
+import json
+
+# Escribir String
+contents = {"aa": 12, "bb": 21}
+with open("myfile1.txt", "w+") as file:
+    file.write(str(contents))
+
+# Escribir Objeto (JSON)
+with open("myfile2.txt", "w+") as file:
+    file.write(json.dumps(contents))
+
+# Leer Objeto (JSON)
+with open("myfile2.txt", "r+") as file:
+    contents = json.load(file)
+    print(contents)
+
+```
+
+### Borrar Archivos y Carpetas
+```python
+import os
+
+# Borrar archivo
+os.remove("myfile.txt")
+
+# Check y Borrar
+if os.path.exists("myfile.txt"):
+    os.remove("myfile.txt")
+else:
+    print("The file does not exist")
+
+# Borrar Carpeta
+os.rmdir("myfolder")
 
 ```
 
