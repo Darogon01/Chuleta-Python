@@ -13,7 +13,7 @@
 * [4. OOP (Object-Oriented Programming)](#4-oop-object-oriented-programming)
 * [5. Intermediate Python](#5-intermediate-python)
 * [6. Environments & Automation](#6-environments--automation)
-* [7. Backend / Data Path](#7-.-backend--data-path)
+* [7. Backend / Data Path](#7.-backend--data-path)
 * [8. Production Level](#8-production-level)
 
 ---
