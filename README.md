@@ -268,7 +268,7 @@ print(r.json()["name"])
 
 ---
 
-## 07. Backend / Data Path
+## 7. Backend / Data Path
 
 Donde Python domina el mercado laboral.
 
