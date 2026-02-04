@@ -1,143 +1,216 @@
 
 
-# 🐍 Python Professional Cheat Sheet (Senior Edition)
-
-Guía de referencia rápida con navegación interna.
+# 🐍 Python Professional Roadmap: The Master Guide
 
 ## 📑 Tabla de Contenidos
 
-* [1. Variables y Constantes](#1-variables-y-constantes)
-* [2. Datos Primitivos](#2-datos-primitivos)
-* [3. Estructuras de Control (Ifs y Bucles)](#3-estructuras-de-control)
-* [4. Funciones (Estructura Completa)](#4-funciones-estructura-completa)
-* [5. Clases y POO](#5-clases-y-poo)
-* [6. Equivalencias Functional JS (Map/Filter)](#6-equivalencias-functional-js-mapfilter)
+* [01. Core Python](#1-core-python)
+* [02. Built-in Data Structures](#2-built-in-data-structures)
+* [03. Modular Code & I/O](#3-modular-code--io)
+* [04. OOP (Object-Oriented Programming)](#4-oop-object-oriented-programming)
+* [05. Intermediate Python](#5-intermediate-python)
+* [06. Environments & Automation](#6-environments--automation)
+* [07. Backend & Data Path](#7-backend--data-path)
+* [08. Production Level](#8-production-level)
 
 
+## 01. Core Python
 
-## 1. Variables y Constantes
+El cimiento de todo. Sin esto, el resto se cae.
 
-En Python no declaramos con `let` o `const`, el contexto lo da el nombre.
-
-* **Variables:** `snake_case` (minúsculas).
-* **Constantes:** `UPPER_CASE` (convención técnica).
-
+* **Syntax & Semantics:** Python usa la indentación (4 espacios) para definir bloques. No hay llaves `{}`.
+* **Variables & Data Types:**
 ```python
-# Variable mutable
-user_score = 150 
-
-# Constante (Convención de solo lectura)
-API_RETRY_LIMIT = 5 
+entero = 10          # int
+decimal = 10.5       # float
+texto = "Hola"       # str
+booleano = True      # bool
 
 ```
 
----
 
-## 2. Datos Primitivos
-
-Los tipos de datos básicos del lenguaje.
-
-| Tipo | Ejemplo | Explicación |
-| --- | --- | --- |
-| `int` | `x = 10` | Enteros. |
-| `float` | `y = 10.5` | Decimales. |
-| `str` | `s = "Dev"` | Cadenas de texto. |
-| `bool` | `is_ready = True` | Lógicos (`True`/`False`). |
-| `None` | `data = None` | El `null` de Python. |
-
----
-
-## 3. Estructuras de Control (Ifs y Bucles)
-
-Controlan el flujo lógico mediante la **indentación obligatoria**.
-
-### Condicionales (If)
-
+* **Control Flow (if/elif/else):**
 ```python
-if score >= 90:
-    print("Senior")
-elif score >= 50:
-    print("Mid")
+if stock > 10:
+    print("Suficiente")
+elif stock > 0:
+    print("Casi agotado")
 else:
-    print("Junior")
+    print("Sin stock")
 
 ```
 
-### Bucles (Loops)
 
+* **Loops (for, while):**
 ```python
-# For: Iteración sobre rangos
-for i in range(5): 
-    print(f"Iteración {i}")
-
-# While: Iteración por condición
-while is_running:
-    if error_detected:
-        break # Rompe el bucle
+for i in range(3): print(f"Vuelta {i}") # For: sabes el límite
+while activo: activo = False            # While: depende de una condición
 
 ```
 
----
 
-## 4. Funciones (Estructura Completa)
-
-Sintaxis con *Type Hinting* (Tipado para el IDE).
-
+* **Functions (def, return):**
 ```python
-def process_data(payload: dict, verbose: bool = False) -> bool:
-    """
-    Sintaxis: def nombre(param: tipo) -> retorno:
-    """
-    return True
-
-# LLAMADA
-status = process_data({"id": 1}, verbose=True)
+def calcular_iva(precio: float) -> float:
+    return precio * 0.21
 
 ```
 
+
+
 ---
 
-## 5. Clases y POO
+## 02. Built-in Data Structures
 
-Estructura de objetos para arquitectura escalable.
+Donde guardas la información de manera inteligente.
 
+* **List, Tuple, Set, Dict:**
 ```python
-class DatabaseConnector:
-    def __init__(self, connection_string: str):
-        # Constructor
-        self.uri = connection_string
-
-    def connect(self):
-        # Método
-        print(f"Conectado a {self.uri}")
-
-# INSTANCIACIÓN (Llamada a la clase)
-db = DatabaseConnector("localhost:5432")
-db.connect()
+lista = [1, 2, 2]     # Mutable, ordenada
+tupla = (1, 2, 3)     # Inmutable (más rápida)
+conjunto = {1, 2, 3}  # Únicos, sin orden
+diccionario = {"id": 1} # Clave-Valor (Búsqueda ultra rápida)
 
 ```
 
+
+* **CRUD Operations:** Crear, Leer, Actualizar, Borrar.
+```python
+items = []
+items.append("nuevo") # Create
+val = items[0]        # Read
+items[0] = "editado"  # Update
+items.pop(0)          # Delete
+
+```
+
+
+* **Comprehensions:** Crear listas de forma elegante.
+```python
+dobles = [x * 2 for x in range(5)]
+
+```
+
+
+* **Error Handling (try/except):**
+```python
+try:
+    f = 10 / 0
+except ZeroDivisionError as e:
+    print(f"Error capturado: {e}")
+
+```
+
+
+
 ---
 
-## 6. Equivalencias Functional JS (Map/Filter)
+## 03. Modular Code & I/O
 
-Traducción directa de métodos de Array de JS a Python.
+Cómo organizar tu proyecto para que no sea un caos.
 
-* **Map (JS):** `arr.map(x => x * 2)`
-* **Pythonic:** `[x * 2 for x in arr]`
-* **Filter (JS):** `arr.filter(x => x > 10)`
-* **Pythonic:** `[x for x in arr if x > 10]`
+* **Modules & Packages:** Un archivo `.py` es un módulo. Una carpeta con archivos `.py` es un paquete.
+* **Imports (import, from):**
+```python
+import math
+from os import path
+
+```
+
+
+* **Scope (local/global):** Lo que vive dentro de una función no existe fuera, a menos que uses `global` (evítalo si puedes).
+* **File I/O:** Manejo de archivos.
+```python
+with open("config.txt", "r") as f: # 'with' asegura que el archivo se cierre solo
+    contenido = f.read()
+
+```
+
+
+* **Code Organization:** Separar la lógica de negocio de la interfaz de usuario.
 
 ---
 
-### 💡 Por qué tus enlaces fallaban:
+## 04. OOP (Object-Oriented Programming)
 
-GitHub genera los IDs de los encabezados de forma automática siguiendo estas reglas:
+Programación para adultos. Modelar la realidad.
 
-1. Pasa todo a **minúsculas**.
-2. Quita signos de puntuación (puntos, paréntesis).
-3. Cambia los **espacios por guiones `-**`.
+* **Classes & Objects:** La clase es el molde, el objeto es la galleta.
+* **__init__:** El constructor que se ejecuta al crear el objeto.
+* **Encapsulation:** Usar `_` o `__` para proteger datos internos.
+* **Inheritance:** Heredar propiedades de otra clase.
+* **Polymorphism:** Un método que se comporta distinto en diferentes clases.
+* **Dunder Methods:**
+```python
+def __str__(self): return "Soy un objeto legible"
 
-Por eso, el enlace para `4. Funciones (Estructura Completa)` debe ser exactamente `#4-funciones-estructura-completa`.
+```
 
-¿Te gustaría que añada una sección sobre **Manejo de Errores (Try/Except)** o **Importación de módulos**?
+
+
+---
+
+## 05. Intermediate Python
+
+Trucos de "mago" para optimizar código.
+
+* **Lambdas:** Funciones anónimas de una sola línea: `suma = lambda x, y: x + y`.
+* **Iterators & Generators (yield):**
+```python
+def contador():
+    yield 1 # No gasta RAM, devuelve el valor y "pausa" la función
+    yield 2
+
+```
+
+
+* **Decorators (@decorator):** Envolver una función para añadirle lógica (ej: medir tiempo).
+* **Regex (re):** Buscar patrones complejos en textos (ej: validar un email).
+
+---
+
+## 06. Environments & Automation
+
+Tu kit de herramientas fuera del código.
+
+* **pip, venv, poetry:**
+* `pip`: Instala paquetes.
+* `venv`: Crea un entorno aislado (tu "caja de arena").
+* `poetry`: Manejo moderno de dependencias.
+
+
+* **Dependency Management:** Archivos `requirements.txt` para que otros puedan instalar lo mismo que tú.
+* **Web Scraping (BeautifulSoup, Scrapy):** Extraer datos de páginas web.
+* **API Consumption (requests):** Hablar con otros servidores.
+
+---
+
+## 07. Backend / Data Path
+
+Donde Python brilla en el mundo real.
+
+* **Web Frameworks (Flask, Django, FastAPI):** Para crear servidores. FastAPI es el estándar actual por velocidad.
+* **REST APIs:** Comunicación estándar mediante JSON.
+* **ORMs & Databases:** Usar Python para escribir en SQL (ej: SQLAlchemy).
+* **Data Path (NumPy, Pandas):** Análisis de datos masivos y tablas.
+* **ML Basics:** Uso de `scikit-learn` para predicciones básicas.
+
+---
+
+## 08. Production Level
+
+Lo que separa a un Junior de un Senior.
+
+* **Testing (pytest):** Si no hay tests, no sabemos si funciona.
+* **Logging:** Registrar qué pasa en el servidor (no uses `print` en producción).
+* **Clean Code:** Seguir las reglas de PEP 8 (legibilidad).
+* **Security:** No guardar contraseñas en el código, usar variables de entorno.
+* **CI/CD:** Automatizar que el código se suba a la nube solo si los tests pasan.
+
+---
+
+### 💡 Último consejo de Senior
+
+No intentes memorizar esto. Úsalo como un índice. Cuando necesites hacer un **Generator**, ven aquí, mira la palabra clave `yield` y busca la documentación oficial. La clave es saber que la herramienta existe.
+
+¿Te gustaría que cree un **repositorio de ejemplo** con la estructura de carpetas real que debería tener un proyecto que cubra estos 8 puntos?
